@@ -1,20 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { NavigationContainer } from "@react-navigation/native";
+import FirstScreen from "./screens/FirstScreen";
+import SecondScreen from "./screens/SecondScreen";
+import ThirdScreen from "./screens/ThirdScreen";
+import FourthScreen from "./screens/FourthScreen";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+
+const Tab = createMaterialTopTabNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen name="First" component={FirstScreen} />
+          <Tab.Screen name="Second" component={SecondScreen} />
+          <Tab.Screen name="Third" component={ThirdScreen} />
+          <Tab.Screen name="Fourth" component={FourthScreen} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
