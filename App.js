@@ -12,7 +12,13 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Tab.Navigator>
+        <Tab.Navigator
+          screenOptions={{
+            // animationEnabled: true,
+            tabBarShowLabel: false,
+            tabBarIndicatorStyle: { display: "none" },
+          }}
+        >
           <Tab.Screen name="First" component={FirstScreen} />
           <Tab.Screen name="Second" component={SecondScreen} />
           <Tab.Screen name="Third" component={ThirdScreen} />
