@@ -4,13 +4,15 @@ import React from "react";
 
 const SecondScreen = ({ navigation }) => {
   const insets = useSafeAreaInsets();
+
   React.useEffect(() => {
     navigation.setOptions({
       tabBarStyle: {
-        paddingTop: insets.top,
+        height: insets.top,
       },
     });
   }, [navigation]);
+
   return (
     <View>
       <Text>SecondScreen</Text>

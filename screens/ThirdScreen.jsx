@@ -4,13 +4,15 @@ import React from "react";
 
 const ThirdScreen = ({ navigation }) => {
   const insets = useSafeAreaInsets();
+
   React.useEffect(() => {
     navigation.setOptions({
       tabBarStyle: {
-        paddingTop: insets.top,
+        height: insets.top,
       },
     });
   }, [navigation]);
+
   return (
     <View>
       <Text>ThirdScreen</Text>
